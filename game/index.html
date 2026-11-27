@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skylark — Island Run</title>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+  <canvas id="hud"></canvas>
+
+  <div id="title-screen" class="overlay">
+    <h1>SKYLARK</h1>
+    <p class="tagline">Island Run &mdash; a little 3D flight game</p>
+    <p class="blurb">One island, one runway, one cheerful little plane. Pick a sortie and fly it.</p>
+    <div class="missions">
+      <button data-mission="rings">Ring Run &mdash; fly 8 rings against the clock</button>
+      <button data-mission="touchgo">Touch &amp; Go &mdash; circuit the lake, land on the runway</button>
+      <button data-mission="supply">Supply Drop &mdash; feed the lake camp from the air</button>
+      <button data-mission="free">Free Flight &mdash; just fly</button>
+    </div>
+    <p class="controls">W/S throttle &middot; Arrow keys pitch &amp; roll &middot; A/D rudder &middot; Space action &middot; R restart &middot; P pause &middot; M mute</p>
+  </div>
+
+  <div id="end-screen" class="overlay hidden">
+    <h1 id="end-title">Mission complete</h1>
+    <p id="end-detail"></p>
+    <p id="end-score"></p>
+    <button id="again-btn">Fly again</button>
+    <button id="menu-btn">Mission select</button>
+  </div>
+
+  <div id="pause-screen" class="overlay hidden">
+    <h1>Paused</h1>
+    <p>Press P to resume</p>
+  </div>
+
+  <div id="toast"></div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
